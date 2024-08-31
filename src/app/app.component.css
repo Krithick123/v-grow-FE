@@ -1,0 +1,34 @@
+
+button{
+  border: none;
+  outline: none;
+}
+.btn_style {
+  cursor: pointer;
+  z-index: 999;
+  position: fixed;
+  top: 83%;
+  right: 12px;
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  padding: 3px 3px;
+  transition: all 0.5s ease;
+}
+.upArrow{
+    /* padding-top: 5px; */
+}
+.btn_style:hover{
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+.whats_style {
+  z-index: 999;
+  position: fixed;
+  top: 72%;
+  right: 7px;
+}
+.whats_style img {
+  width: 50px; /* Adjust the size as needed */
+}

@@ -1,54 +1,36 @@
-<header class="header" data-header>
+<nav class="navbar navbar-expand-lg ">
   <div class="container">
-
-    <a href="#" class="logo">V-Grow</a>
-    @if(isActive){
-      <nav class="navbar container" [class.active]="isActive" data-navbar>
-        <ul class="navbar-list">
-  
-          <li>
-            <a href="#home" class="navbar-link" data-nav-link>Home</a>
+    <!-- <a class="navbar-brand me-auto" href="#">VGrow</a> -->
+    <img src="vgrowlogo.png" alt="logo" height="55" width="50" class="me-auto brand">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">VGrow</h5> -->
+        <img src="vgrowlogo.png" id="offcanvasNavbarLabel" alt="logo" height="55" width="50" class="me-auto brand">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active mx-lg-2" aria-current="page" href="#">Home</a>
           </li>
-  
-          <li>
-            <a href="#service" class="navbar-link" data-nav-link>Services</a>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="#">About</a>
           </li>
-  
-          <li>
-            <a href="#project" class="navbar-link" data-nav-link>Project</a>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="#">Services</a>
           </li>
-  
-          <li>
-            <a href="#about" class="navbar-link" data-nav-link>About Us</a>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="#">Clients</a>
           </li>
-  
-          <li>
-            <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="#">Contact Us</a>
           </li>
-  
-          <li>
-            <a href="#contact" class="navbar-link" data-nav-link>Contact Us</a>
-          </li>
-  
-          <li>
-            <a href="#" class="btn btn-primary">Free Demat</a>
-          </li>
-  
         </ul>
-      </nav>
-    }
-   
-    <button class="nav-toggle-btn" [class.active]="isActive" aria-label="Toggle menu" data-nav-toggler
-      (click)="toggleMenu()">
-      @if(isActive){
-      <div class="close">
-        <img src="icons8-close-32.png" alt="close">
-      </div>
-      }@else {
-      <div class="open">
-        <img src="icons8-hamburger-menu-32.png" alt="open">
-      </div>
-      }
+      </div>     
+    </div>
+    <a href="#" class="demat-btn">Free Demat</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
   </div>
-</header>
+</nav>

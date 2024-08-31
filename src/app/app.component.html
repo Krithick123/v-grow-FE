@@ -1,2 +1,14 @@
 <app-header-nav></app-header-nav>
+<app-hero></app-hero>
+<button class="btn_style" *ngIf="isShowScrollTop" (click)="scrollToTop()">
+    <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#fff"
+        class="upArrow">
+        <path d="M480-545.33 287.33-352.67 240-400l240-240 240 240-47.33 47.33L480-545.33Z" />
+    </svg>
+</button>
+<div class="whats_style">
+    <a href="https://wa.link/fd932z" target="_blank"><img src="whatsApp.png" alt=""></a>
+</div>
 <router-outlet></router-outlet>
+<app-footer></app-footer>
+<!-- <p>lorem1000</p> -->
