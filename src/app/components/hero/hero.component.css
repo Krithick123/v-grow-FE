@@ -10,6 +10,7 @@ a{
 .img_conatiner img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .head {
@@ -22,12 +23,15 @@ a{
 }
 
 .head-1 p {
-    font-size: clamp(18px, 3vw, 46px);
+    font-size: clamp(14px, 4vw, 46px);
     font-weight: bold;
     color: var(--eerie-black);
     line-height: 1.2;
 }
-
+.head-2 p{
+    font-size: clamp(14px, 4vw, 18px);
+    text-align: center;
+}
 .head-3 .demat-btn{
     background-image: var(--gradient);
     color: var(--white-1);

@@ -5,13 +5,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowAltCircleUp } from '@fortawesome/free-regular-svg-icons'; 
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import AOS from 'aos';
-import { ContactUsComponent } from './components/contact-us/contact-us.component';
-import { HeroComponent } from './components/hero/hero.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule,RouterOutlet,HeaderNavComponent,FontAwesomeModule,ContactUsComponent,HeroComponent,FooterComponent],
+  imports: [CommonModule,RouterOutlet,HeaderNavComponent,FontAwesomeModule,FooterComponent,HomeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

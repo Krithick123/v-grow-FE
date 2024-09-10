@@ -14,7 +14,7 @@
   }
   .foot_Links li a{
     text-decoration: none;
-    color: var(--blackColor-text);
+    color: #414A4C;
     font-size: clamp(12px,2vw,13px);
     font-weight: 500;
     transition: var(--transition-1);
@@ -31,7 +31,7 @@
   /* padding-left: 0px; */
   /* padding-right: 0px; */
   list-style-type: none;
-  margin-top: 150px;
+  /* margin-top: 150px; */
  }
  .bgColor{
   /* background-color: #16325B; */
@@ -42,9 +42,13 @@
  }
  .copyRight p:nth-of-type(1){
   font-weight: 600;
-  font-size: clamp(14px,2vw,16px);
+  font-size: clamp(12px,2vw,14px);
  }
  .copyRight p:nth-of-type(2){
-  font-size: 10px;
+  font-size: 8px;
   font-style: italic;
  }
+
+ /* .footer_subTitle{
+  color: var(--red-crayola);
+ } */

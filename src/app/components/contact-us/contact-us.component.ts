@@ -1,33 +1,25 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import {
-  faFacebook,
-  faInstagram,
-  faLinkedin,
-} from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import emailjs from '@emailjs/browser';
+
 
 
 @Component({
   selector: 'app-contact-us',
   standalone: true,
-  imports: [FontAwesomeModule,ReactiveFormsModule,CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './contact-us.component.html',
   styleUrl: './contact-us.component.css'
 })
 export class ContactUsComponent {
-  faInstagram = faInstagram;
-  faLinkedinIn = faLinkedin;
-  faFacebook = faFacebook;
-  cloOneContent = {
-    mail: 'connect@itechglobalsolutions.in',
-    address: 'Coimbatore,Tamil Nadu, India.',
-    phone: '+91 98942 15407',
-  };
-  constructor(){}
-  contactForm = new FormGroup({
+  constructor() {}
+  sendMessageForm = new FormGroup({
     firstName: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
@@ -47,39 +39,38 @@ export class ContactUsComponent {
     message: new FormControl('', [Validators.required]),
   });
   get firstName() {
-    return this.contactForm.get('firstName');
+    return this.sendMessageForm.get('firstName');
   }
   get lastName() {
-    return this.contactForm.get('lastName');
+    return this.sendMessageForm.get('lastName');
   }
   get email() {
-    return this.contactForm.get('email');
+    return this.sendMessageForm.get('email');
   }
   get contactNum() {
-    return this.contactForm.get('contactNum');
+    return this.sendMessageForm.get('contactNum');
   }
   get message() {
-    return this.contactForm.get('message');
+    return this.sendMessageForm.get('message');
   }
 
   async onSubmit() {
-    if (this.contactForm.valid) {
+    if (this.sendMessageForm.valid) {
       // emailjs.init('tZSANNsACFuPSce4R');
       // let response = await emailjs.send('service_5jmne9d', 'template_wnikr44', {
-      //   message: this.contactForm.value.message,
-      //   firstName: this.contactForm.value.firstName,
-      //   lastName: this.contactForm.value.lastName,
-      //   email: this.contactForm.value.email,
-      //   contactNum: this.contactForm.value.contactNum,
+      //   message: this.sendMessageForm.value.message,
+      //   firstName: this.sendMessageForm.value.firstName,
+      //   lastName: this.sendMessageForm.value.lastName,
+      //   email: this.sendMessageForm.value.email,
+      //   contactNum: this.sendMessageForm.value.contactNum,
       // });
-      console.log(this.contactForm.value);
+      console.log(this.sendMessageForm.value);
       // this.toast.info({
       //   detail: 'SUCCESS',
       //   summary: 'FORM HAS SUBMITTED SUCCESSFULLY',
       //   duration: 5000,
       // });
-      this.contactForm.reset();
+      this.sendMessageForm.reset();
     }
   }
-
 }

@@ -1,0 +1,107 @@
+
+<div class="full-width-background py-3">
+    <div class="container contact_cont mt-5" data-aos="fade-up"
+    data-aos-duration="1500">
+        <div class="row">
+            <div class="col-12 col-lg-6 img_conatiner">
+                <img src="contact.svg" alt="contactImg">
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="form_content px-4 py-4">
+                    <p class="text-center fs-4 fw-medium">Talk to an Expert</p>
+                    <form [formGroup]="sendMessageForm" action="javascript:void(0)" (submit)="onSubmit()">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <!-- Name -->
+                                <div class="mb-1 mt-1 mt-md-2">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control form-control1" formControlName="firstName" id="firstName"
+                                        name="firstName" placeholder="Ex: John">
+                                    <br>
+                                    <span *ngIf="!firstName?.valid && (firstName?.touched || firstName?.dirty)">
+                                        <span class="text-danger" *ngIf="firstName?.errors?.['required']">
+                                            First name is required
+                                        </span>
+                                        <span class="text-danger" *ngIf="firstName?.errors?.['minlength']">
+                                            Minimum length is 3 characters
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <!-- lastName -->
+                                <div class="mb-1  mt-md-2">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control form-control1" formControlName="lastName" id="lastName"
+                                        name="lastName" placeholder="Ex: Andrew">
+                                    <br>
+                                    <span *ngIf="!lastName?.valid && (lastName?.touched || lastName?.dirty)">
+                                        <span class="text-danger" *ngIf="lastName?.errors?.['required']">
+                                            Last name is required
+                                        </span>
+                                        <span class="text-danger" *ngIf="lastName?.errors?.['maxlength']">
+                                            Maximum length is 12 characters
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <!-- Email -->
+                                <div class="my-1">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control form-control1" formControlName="email" id="email" name="email"
+                                        placeholder="Ex: John@example.com">
+                                    <br>
+                                    <span *ngIf="!email?.valid && (email?.touched || email?.dirty)">
+                                        <span class="text-danger" *ngIf="email?.errors?.['required']">
+                                            Email is required
+                                        </span>
+                                        <span class="text-danger" *ngIf="email?.errors?.['pattern']">
+                                            Invalid Email
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <!-- contactNum -->
+                                <div class="my-1">
+                                    <label for="contactNum" class="form-label">Contact Number</label>
+                                    <input type="text" class="form-control form-control1" formControlName="contactNum" id="contactNum"
+                                        name="contactNum" maxlength="10" placeholder="Ex: 7555759876">
+                                    <br>
+                                    <span *ngIf="!contactNum?.valid && (contactNum?.touched || contactNum?.dirty)">
+                                        <span class="text-danger" *ngIf="contactNum?.errors?.['required']">
+                                            Contact number is required
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <!-- Message -->
+                                <div class="my-1">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" formControlName="message" id="message" name="message"
+                                        rows="4" placeholder="Ex: Tell us more"></textarea>
+                                    <br>
+                                    <span *ngIf="!message?.valid && (message?.touched || message?.dirty)">
+                                        <span class="text-danger" *ngIf="message?.errors?.['required']">
+                                            Message is required
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Submit Button -->
+                        <div class="text-center">
+                            <button type="submit" class="btn-style mt-1" [disabled]="sendMessageForm.invalid">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
