@@ -1,6 +1,7 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+declare var bootstrap: any; // Declare Bootstrap for TypeScript
 
 @Component({
   selector: 'app-header-nav',
@@ -10,12 +11,23 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   styleUrl: './header-nav.component.css',
 })
 export class HeaderNavComponent {
+
   isActive: boolean = true;
   showScrollBar: boolean = false;
   screenWidth: any;
   constructor() {
     // Check initial screen size when the component is initialized
     this.setMenuStateBasedOnScreenWidth(window.innerWidth);
+  }
+  
+  closeOffcanvas(): void {
+    const offcanvasElement = document.getElementById('offcanvasNavbar');
+    if (offcanvasElement) {
+      const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
+      if (bsOffcanvas) {
+        bsOffcanvas.hide(); // Close the offcanvas menu
+      }
+    }
   }
 
   @HostListener('window:resize', ['$event'])
