@@ -1,0 +1,106 @@
+/* 
+---------------------------------------------
+Portfolio
+--------------------------------------------- 
+*/
+
+.our-portfolio {
+    padding-top: 100px;
+    padding-bottom: 120px;
+    margin-top: 0px;
+}
+
+.our-portfolio .section-heading h2 {
+    text-align: center;
+    margin: 0px 90px 0px 90px;
+    margin-bottom: 120px;
+    position: relative;
+    z-index: 1;
+}
+
+.our-portfolio .item {
+    position: relative;
+}
+
+.our-portfolio .item:hover .hidden-content {
+    top: -100px;
+    opacity: 1;
+    visibility: visible;
+    z-index: 9999;
+}
+
+.our-portfolio .item:hover .showed-content {
+    top: 90px;
+}
+
+.our-portfolio .hidden-content {
+    background: rgb(255, 77, 30);
+    background: linear-gradient(105deg, rgba(255, 77, 30, 1) 0%, rgba(255, 44, 109, 1) 100%);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    opacity: 0;
+    top: 0;
+    visibility: hidden;
+    position: absolute;
+    z-index: 2;
+    transition: all 0.5s;
+}
+
+.our-portfolio .hidden-content:after {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background: rgb(255, 77, 30);
+    content: '';
+    left: 50%;
+    bottom: -8px;
+    margin-left: -5px;
+    transform: rotate(45deg);
+    background: linear-gradient(105deg, rgba(255, 52, 69, 1) 0%, rgba(255, 51, 78, 1) 100%);
+    z-index: -1;
+}
+
+.our-portfolio .hidden-content h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.our-portfolio .hidden-content p {
+    color: #fff;
+}
+
+.our-portfolio .showed-content {
+    top: 0px;
+    position: relative;
+    z-index: 3;
+    background-color: #fff;
+    text-align: center;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s;
+}
+
+.our-portfolio .showed-content img {
+    max-width: 100px;
+}
+
+a{
+    text-decoration: none;
+    color: #444;
+}
+.full-width-background{
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #eaeaebd3 100%);
+  }
+@media (max-width: 992px) {
+    .our-portfolio .section-heading h2 {
+        margin: 0px 0px 80px 0px;
+    }
+
+    .our-portfolio .item {
+        margin-bottom: 15px;
+    }
+}

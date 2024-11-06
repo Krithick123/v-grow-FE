@@ -40,6 +40,10 @@
     background-color: #fcfdfe;
 }
 
+.box_container a{
+    text-decoration: none;
+    color: #444;
+}
 /* .box::after {
     content: "";
     position: absolute;
